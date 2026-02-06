@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    background: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("IMG-20250315-WA0026.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 700px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+.emoji {
+    font-size: 70px;
+    margin: 20px 0;
+    animation: move 3s infinite alternate ease-in-out;
+}
+
+.poem {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 30px pink, 0 0 40px red; }
+}
+
+@keyframes move {
+    from { transform: translateX(-20px); }
+    to { transform: translateX(20px); }
+}
+
+.rose {
+    position: absolute;
+    font-size: 30px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Happy Rose Day 🌹</h1>
+
+    <div class="emoji">
+        👦🏻🌹👧🏻
+    </div>
+
+    <div class="poem">
+        Like a rose, you’re soft and bright,<br>
+        The most beautiful part of my life.<br>
+        In your smile, I find my peace,<br>
+        In your eyes, my worries cease.<br><br>
+
+        Every rose reminds me of you,<br>
+        Pure, precious, and forever true.<br>
+        If I had one rose for every time I thought of you,<br>
+        I’d have a garden that forever grew.<br><br>
+
+        This rose is not just a flower today,<br>
+        It carries my love in every way.<br>
+        Happy Rose Day, my beautiful girl,<br>
+        You are my heart, my world. ❤️<br>
+        I love you so so so so much Baby😘
+    </div>
+
+</div>
+
+<script>
+function createRose() {
+    const rose = document.createElement("div");
+    rose.innerHTML = "🌹";
+    rose.classList.add("rose");
+
+    rose.style.left = Math.random() * window.innerWidth + "px";
+    rose.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(rose);
+
+    setTimeout(() => {
+        rose.remove();
+    }, 6000);
+}
+
+setInterval(createRose, 300);
+</script>
+
+</body>
+</html>
